@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherNow</title>
+    <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container"> 
+            <form action="/weather/city" method="POST">
+                <div class="form-container">
+                    <div class="input-wrapper">
+                        <input type="text" placeholder="Enter city" name="city" required>
+                    </div>
+
+                    <button type="submit" class="search-btn"><img src="/images/search.png" alt="search"></button>
+                </div>
+            </form>
+
+            <form action="/weather/location" method="POST">
+                <button type="submit" class="location-btn"><img src="/images/localization.png" alt="location"></button>
+            </form>
+        </div>
+
+        <% if(locals.weather && locals.temperature && locals.city && locals.humidity && locals.wind) { %>
+        <div class="weather-info">
+            <img src="/images/<%= weather %>.png" alt="Weather Icon" class="weather-icon">
+            <h1 class="temperature"><%= temperature %> °C</h1>
+            <h2 class="city-name"><%= city %></h2>
+        </div>
+
+        <div class="extra-info">
+            <div class="info-card">
+                <img src="/images/humidity.png" alt="Humidity Icon" class="info-icon">
+                <div class="info-card-humidity">
+                    <span class="info-value"><%= humidity %></span>
+                    <span class="info-label">Humidity</span>
+                </div>
+            </div>
+            <div class="info-card">
+                <img src="/images/wind.png" alt="Wind Icon" class="info-icon">
+                <div class="info-card-wind">
+                    <span class="info-value"><%= wind %></span>
+                    <span class="info-label">Wind</span>
+                </div>  
+            </div>
+        </div>
+        <% } else if(locals.error) { %>
+            <div class="weather-info">
+                <img src="/images/clouds.png" alt="Weather Icon" class="weather-icon">
+                <h1 class="temperature"><%= error %></h1> 
+                <h2 class="welcome">Please try again with a valid city name.</h2>
+            </div>
+        <% } else { %>
+            <div class="weather-info">
+                <img src="/images/clouds.png" alt="Weather Icon" class="weather-icon">
+                <h1 class="temperature">Welcome to WeatherNow!</h1>
+                <h2 class="welcome">Search for any city to check the current weather and forecast</h2>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>

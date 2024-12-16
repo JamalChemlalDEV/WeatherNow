@@ -1,0 +1,12 @@
+# node_modules
+node_modules/
+
+# Logs
+*.log
+
+# Directories de sistema de Mac o Windows
+.DS_Store
+Thumbs.db
+
+# Entornos de producción
+.env
