@@ -17,7 +17,7 @@ WeatherNow is a simple web application that provides the current weather based o
 ## Setup Instructions
 ### 1. Clone the repository
 You can clone this repository to your local machine by running the following command:
-git clone https://github.com/your-username/WeatherNow.git
+git clone https://github.com/JamalChemlalDEV/WeatherNow
 
 ### 2. Install npm dependencies
 After cloning the repository, you need to install the required dependencies using npm. Run the following command in the project directory:
