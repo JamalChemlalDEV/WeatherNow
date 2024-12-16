@@ -25,7 +25,7 @@ npm install
 
 ### 3. Get your own OpenWeatherMap API key
 In order to fetch weather data, you need an API key from OpenWeatherMap. Follow these steps:
--Go to OpenWeatherMap.
--Sign up for an account and get your free API key.
--Once you have the API key, open the index.js file in your project and replace the following line:
+- Go to OpenWeatherMap.
+- Sign up for an account and get your free API key.
+- Once you have the API key, open the index.js file in your project and replace the following line:
 const apiKey = "your-openweathermap-api-key";
